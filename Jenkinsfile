@@ -9,10 +9,10 @@ pipeline{
                 bat 'mvn clean package'
             }
         }
-        // stage('Test'){
-        //     steps {
-        //         sh 'mvn test'
-        //     }
-        // }
+        stage('Test'){
+            steps {
+                bat 'mvn test'
+            }
+        }
     }
 }
