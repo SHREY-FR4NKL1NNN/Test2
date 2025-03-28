@@ -1,10 +1,8 @@
 pipeline{
     agent any
-
     tools{
         maven 'demo';
     }
-
     stages{
         stage('Build'){
             steps{
