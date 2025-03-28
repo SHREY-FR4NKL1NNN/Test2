@@ -1,28 +1,28 @@
 pipeline{
     agent any
-    stages{
 
-        stage('Checkout'){
-            steps{
-                git url: 'https://github.com/SHREY-FR4NKL1NNN/Test2.git', branch: 'main'
-            }
-        }
+    tools{
+        maven 'demo';
+    }
+
+    stages{
         stage('Build'){
             steps{
-                echo 'Building the application'
+                sh 'mvn clean package'
             }
         }
-
         stage('Test'){
             steps{
-                echo 'Testing the application'
+                sh 'mvn test'
             }
         }
-
-        stage('Deploy'){
-            steps{
-                echo 'Deploying the application'
-            }
-        }
+        // stage('Run JAR'){
+        //     steps{
+        //         script{
+        //             def output = sh(script: 'java -jar target/simple-java-project-1.0-SNAPSHOT.jar', returnStdout: true)
+        //             echo "Output from JAR: ${output}"
+        //         }
+        //     }
+        // }
     }
 }
