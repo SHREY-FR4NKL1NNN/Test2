@@ -4,7 +4,7 @@ pipeline{
 
         stage('Checkout'){
             steps{
-                git url: 'https://github.com/SHREY-FR4NKL1NNN/Test2.git', branch: 'main'
+                git url: 'https://github.com/SHREY-FR4NKL1NNN/Test2.git', branch: 'master'
             }
         }
         stage('Build'){
